@@ -6,8 +6,6 @@ resource "google_container_cluster" "this" {
   network                  = google_compute_network.this.self_link
   subnetwork               = google_compute_subnetwork.private.self_link
   project                  = google_project.this.project_id
-  logging_service          = "none"
-  monitoring_service       = "none"
   networking_mode          = "VPC_NATIVE"
 
   deletion_protection = false
