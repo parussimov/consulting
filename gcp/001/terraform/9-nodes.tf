@@ -21,7 +21,7 @@ resource "google_container_node_pool" "general" {
   }
 
   node_config {
-    spot         = true
+    spot         = false
     machine_type = "e2-medium"
 
     labels = {

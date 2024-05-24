@@ -1,0 +1,12 @@
+---
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: myapp
+  namespace: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  endpoints:
+    - port: prom-metrics

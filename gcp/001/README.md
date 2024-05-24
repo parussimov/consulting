@@ -12,6 +12,8 @@
 - [Standalone Prometheus frontend UI](https://cloud.google.com/stackdriver/docs/managed-prometheus/query-api-ui)
 - [Drop metrics](https://www.robustperception.io/dropping-metrics-at-scrape-time-with-prometheus/)
 
+- [Enabling the target status feature](https://cloud.google.com/stackdriver/docs/managed-prometheus/setup-managed#target-status)
+
 ## Commands
 
 ```bash
@@ -38,4 +40,16 @@ Check status of the target
 
 ```bash
 kubectl -n monitoring describe podmonitoring cadvisor
+```
+
+
+```bash
+kubectl port-forward myapp-8bcff6cc5-64cqr 8081 -n myapp
+curl localhost:8081/metrics
+kubectl describe PodMonitoring -n myapp
+up
+myapp_request_duration_seconds{quantile="0.9"}
+kubectl port-forward svc/frontend 9090 -n gmp-monitoring
+kubectl port-forward svc/grafana 3000 -n gmp-monitoring
+Data source: http://frontend:9090
 ```
