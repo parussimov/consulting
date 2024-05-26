@@ -11,6 +11,7 @@
 - [Main Tutorial](https://github.com/antonputra/tutorials/tree/d51910561a1ec1d5a377a41167edb89fc28faa83/lessons/132)
 - [Standalone Prometheus frontend UI](https://cloud.google.com/stackdriver/docs/managed-prometheus/query-api-ui)
 - [Drop metrics](https://www.robustperception.io/dropping-metrics-at-scrape-time-with-prometheus/)
+- [Example Usage - Monitoring Alert Policy Promql Condition](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/monitoring_alert_policy#example-usage---monitoring-alert-policy-promql-condition)
 
 - [Enabling the target status feature](https://cloud.google.com/stackdriver/docs/managed-prometheus/setup-managed#target-status)
 
@@ -52,4 +53,6 @@ myapp_request_duration_seconds{quantile="0.9"}
 kubectl port-forward svc/frontend 9090 -n gmp-monitoring
 kubectl port-forward svc/grafana 3000 -n gmp-monitoring
 Data source: http://frontend:9090
+
+myapp_request_duration_seconds{quantile="0.9"} > 2
 ```

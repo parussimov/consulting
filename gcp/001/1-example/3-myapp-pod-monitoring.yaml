@@ -8,5 +8,6 @@ spec:
   selector:
     matchLabels:
       app: myapp
+  # https://github.com/GoogleCloudPlatform/prometheus-engine/blob/v0.10.0/doc/api.md#scrapeendpoint
   endpoints:
     - port: prom-metrics

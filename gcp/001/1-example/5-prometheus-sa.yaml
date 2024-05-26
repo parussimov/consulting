@@ -5,4 +5,4 @@ metadata:
   name: prometheus-ui
   namespace: gmp-monitoring
   annotations:
-    iam.gke.io/gcp-service-account: prometheus-ui@k8s-dev-860022.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account: prometheus-ui@k8s-dev-531388.iam.gserviceaccount.com # TODO: update project id

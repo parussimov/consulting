@@ -1,0 +1,22 @@
+resource "google_monitoring_alert_policy" "myapp_test" {
+  project = google_project.this.project_id
+
+  display_name = "My Test Alert"
+  combiner     = "OR"
+
+  conditions {
+    display_name = "myapp latency p=90 higher then 2 seconds"
+
+    condition_prometheus_query_language {
+      query               = "myapp_request_duration_seconds{quantile='0.9'} > 2"
+      duration            = "30s"
+      evaluation_interval = "30s"
+      alert_rule          = "MyappTest"
+      rule_group          = "a myapp test"
+    }
+  }
+
+  alert_strategy {
+    auto_close = "1800s"
+  }
+}

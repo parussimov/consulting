@@ -9,3 +9,10 @@ resource "google_project_service" "container" {
 
   depends_on = [google_project_service.compute]
 }
+
+resource "google_project_service" "monitoring" {
+  project = google_project.this.project_id
+  service = "monitoring.googleapis.com"
+
+  depends_on = [google_project_service.compute]
+}

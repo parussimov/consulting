@@ -1,0 +1,25 @@
+---
+# TODO: Example - It is NOT valid
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: kubernetes-apiservers
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      component: apiserver
+  # prometheus-engine - https://github.com/GoogleCloudPlatform/prometheus-engine/blob/v0.10.0/doc/api.md#scrapeendpoint
+  # prometheus-operator - https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.PodMetricsEndpoint
+  # Package: Control plane metrics - https://cloud.google.com/kubernetes-engine/docs/how-to/configure-metrics#control-plane-metrics
+  # use monitoring_config terraform instead
+  # prometheus-oerator example - https://github.com/antonputra/tutorials/blob/4b7f35be40bbd86f8e1de3a31d83123f93c56dc4/lessons/134/kubelet/service-monitor.yaml#L18
+  # to view these metrics click "View GKE Dashboard" link in GCP console
+  endpoints:
+    - port: https
+      scheme: https
+      path: /metrics
+      tlsConfig:
+        caFile: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+        insecureSkipVerify: true
+      bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token

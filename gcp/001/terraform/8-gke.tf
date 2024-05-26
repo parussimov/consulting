@@ -10,10 +10,15 @@ resource "google_container_cluster" "this" {
 
   deletion_protection = false
 
+  monitoring_service = "monitoring.googleapis.com/kubernetes"
+
   monitoring_config {
     managed_prometheus {
       enabled = true
     }
+
+    # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster#enable_components
+    enable_components = ["SYSTEM_COMPONENTS", "APISERVER"]
   }
 
   addons_config {

@@ -34,3 +34,6 @@ override.tf.json
 terraform.rc
 
 terraform.tfstate
+
+# Exeption, example don't need this
+.terraform.lock.hcl

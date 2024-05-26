@@ -35,7 +35,7 @@ spec:
           image: gke.gcr.io/prometheus-engine/frontend:v0.8.0-gke.4
           args:
             - "--web.listen-address=:9090"
-            - "--query.project-id=k8s-dev-860022"
+            - "--query.project-id=k8s-dev-531388" # TODO: update project id
           ports:
             - name: web
               containerPort: 9090
