@@ -10,8 +10,6 @@ resource "google_container_cluster" "this" {
 
   deletion_protection = false
 
-  monitoring_service = "monitoring.googleapis.com/kubernetes"
-
   monitoring_config {
     managed_prometheus {
       enabled = true
