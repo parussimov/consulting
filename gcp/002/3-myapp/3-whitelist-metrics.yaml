@@ -1,0 +1,21 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: myapp-keep
+  namespace: gmp-monitoring
+  labels:
+    component: main
+spec:
+  namespaceSelector:
+    matchNames:
+      - myapp
+  selector:
+    matchLabels:
+      app: myapp
+  podMetricsEndpoints:
+    - port: prom-metrics
+      metricRelabelings:
+        - sourceLabels: [__name__]
+          regex: (myapp_job_duration_seconds|myapp_request_duration_seconds)
+          action: keep
