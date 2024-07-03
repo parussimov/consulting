@@ -17,5 +17,5 @@ spec:
     - port: prom-metrics
       metricRelabelings:
         - sourceLabels: [__name__]
-          regex: (myapp_job_duration_seconds|myapp_request_duration_seconds)
+          regex: (myapp_job_duration_seconds)
           action: keep

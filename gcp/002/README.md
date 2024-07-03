@@ -7,6 +7,7 @@
 - [Reduce metrics costs by filtering collected and forwarded metrics](https://grafana.com/docs/grafana-cloud/cost-management-and-billing/reduce-costs/metrics-costs/client-side-filtering/)
 - [How relabeling in Prometheus works](https://grafana.com/blog/2022/03/21/how-relabeling-in-prometheus-works/)
 - [How to drop and delete metrics in Prometheus](https://faun.pub/how-to-drop-and-delete-metrics-in-prometheus-7f5e6911fb33)
+- [Prometehus Operator GitHub](https://github.com/prometheus-operator/prometheus-operator)
 
 ## Commands
 
