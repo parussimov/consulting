@@ -37,3 +37,6 @@ terraform.tfstate
 
 # Exeption, example don't need this
 .terraform.lock.hcl
+
+# Python virtual env
+.venv
