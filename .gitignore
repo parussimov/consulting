@@ -40,3 +40,5 @@ terraform.tfstate
 
 # Python virtual env
 .venv
+
+*.zip
