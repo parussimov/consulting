@@ -14,7 +14,7 @@ resource "google_storage_bucket" "images" {
   uniform_bucket_level_access = true
 }
 
-# # Upload test image to GS bucket.
+# Upload test image to GS bucket.
 resource "google_storage_bucket_object" "image" {
   bucket = google_storage_bucket.images.name
   name   = "gcp-logo.png"
